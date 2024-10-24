@@ -17,7 +17,7 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     color: #fff;
-    cursor: url('/Imagenes/nave.png'), auto; /* Cambia el cursor a una nave espacial */
+    cursor: url("\Imagenes\nave.png"), auto; /* Cambia el cursor a una nave espacial */
 }
 
 
