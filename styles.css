@@ -11,7 +11,7 @@ html, body {
 
 /* Aplica la imagen de fondo al body */
 body {
-    background-image: url('./Imagenes/imagen2.webp'); /* Ruta de la imagen de fondo */
+    background-image: url('/Imagenes/imagen1.webp'); /* Ruta de la imagen de fondo */
     background-size: cover; /* Asegura que la imagen cubra todo el body */
     background-position: center;
     background-attachment: fixed;
