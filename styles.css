@@ -11,14 +11,15 @@ html, body {
 
 /* Aplica la imagen de fondo al body */
 body {
-    background-image: url('/Imagenes/imagen1.webp'); /* Ruta de la imagen de fondo */
+    background-image: url('/Imagenes/imagen2.webp'); /* Ruta de la imagen de fondo */
     background-size: cover; /* Asegura que la imagen cubra todo el body */
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     color: #fff;
-    cursor: url("C:\Users\braup\OneDrive\Desktop\Portafolio\Imagenes\nave.png"), auto; /* Cambia el cursor a una nave espacial */
+    cursor: url('/Imagenes/nave.png'), auto; /* Cambia el cursor a una nave espacial */
 }
+
 
 /* Efecto de chispas */
 .sparkle {
@@ -164,7 +165,7 @@ main p {
 
 /* Estilos para el footer */
 footer {
-    background-image: url('C:/Users/braup/OneDrive/Desktop/Portafolio/Imagenes/imagen-footer.jpg');
+    background-image: url('/Imagenes/imagen-footer.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
