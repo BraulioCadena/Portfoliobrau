@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio de Proyectos - Braulio Cadena</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlace a tu archivo CSS -->
+    <style>
+        /* Estilo de las chispas */
+        .sparkle {
+            position: absolute;
+            width: 15px; /* Aumenta el ancho a 15px */
+            height: 15px; /* Aumenta la altura a 15px */
+            background: rgba(235, 240, 240, 0.8); /* Color amarillo */
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); /* Ajusta la sombra para mayor brillo */
+            border-radius: 50%;
+            pointer-events: none;
+            animation: fadeout 0.8s ease-out forwards;
+            z-index: 9999; /* Asegura que esté sobre todos los elementos */
+        }
+
+        /* Animación para desvanecer las chispas */
+        @keyframes fadeout {
+            to {
+                opacity: 0;
+                transform: scale(1.5); /* Escala mayor para hacer las chispas más grandes */
+            }
+        }
+
+        /* Ajusta el z-index de la imagen de fondo */
+        #background-image {
+            position: relative;
+            z-index: 1; /* Debajo de las chispas */
+        }
+
+        /* Asegura que el contenido no cubra las chispas */
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <h1>Braulio Cadena Espinoza</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobre-mi.html">Sobre Mí</a></li>
+                <li>
+                    <a href="index.html">Proyectos o practicas Completadas</a> <!-- Redirige a index.html -->
+                    <ul class="submenu"> <!-- Submenú -->
+                        <li><a href="proyecto1.html">Proyecto 1</a></li>
+                        <li><a href="proyecto2.html">Proyecto 2</a></li>
+                        <li><a href="proyecto3.html">Proyecto 3</a></li>
+                        <li><a href="proyecto4.html">Proyecto 4</a></li>
+                        <li><a href="proyecto5.html">Proyecto 5</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="index.html">Proyectos o practicas en proceso</a> <!-- Redirige a index.html -->
+                    <ul class="submenu"> <!-- Submenú -->
+                        <li><a href="proyecto11.html">Proyecto 1</a></li>
+                        <li><a href="proyecto22.html">Proyecto 2</a></li>
+                        <li><a href="proyecto33.html">Proyecto 3</a></li>
+                    </ul>
+                </li>
+                <li><a href="resources.html">Recursos</a></li>
+                <li><a href="autodidacta.html">Sigo aprendiendo evidencia aqui</a></li>
+                <li><a href="certificaciones.html">Certificaciones</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+        <section id="intro">
+            <img src="C:/Users/braup/OneDrive/Desktop/Portafolio/Imagenes/imagen2.webp" alt="Fondo HD" id="background-image">
+            <div class="content">
+                <h2>Bienvenido a Mi Portafolio</h2>
+                <p>Un poco de portafolio es mejor que nada.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>“Todo lo he aprendido a través del conocimiento autodidacta y lo que he estudiado en la escuela.”</p>
+    </footer>
+
+    <script>
+        // Función para crear chispas
+        function createSparkle(x, y) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = `${x}px`;
+            sparkle.style.top = `${y}px`;
+            document.body.appendChild(sparkle);
+
+            // Eliminar la chispa después de 0.8 segundos
+            setTimeout(() => {
+                sparkle.remove();
+            }, 800);
+        }
+
+        // Detectar movimiento del mouse en todo el documento
+        document.addEventListener('mousemove', function (e) {
+            createSparkle(e.pageX, e.pageY);
+        });
+    </script>
+</body>
+</html>

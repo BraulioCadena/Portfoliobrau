@@ -1,0 +1,58 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0d0d0d; /* Fondo oscuro */
+    color: #fff; /* Texto en blanco para contrastar */
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro y translúcido */
+    color: #13c9ea;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.biography-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: transparent; /* Hacer que el fondo sea transparente */
+}
+
+.photo-container {
+    flex: 1; /* Ajusta el espacio según el tamaño de la imagen */
+    text-align: center; /* Centra la imagen */
+}
+
+.bio-photo {
+    max-width: 100%;
+    height: auto; /* Ajusta la altura automáticamente */
+    border-radius: 0; /* Eliminar bordes redondeados para un cuadrado */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para efecto 3D */
+}
+
+.bio-content {
+    flex: 2; /* Da más espacio al contenido de la biografía */
+    padding-left: 2rem; /* Espacio a la izquierda para separación */
+}
+
+.bio-content h2 {
+    font-size: 2rem;
+    color: #13c9ea; /* Título en color azul */
+}
+
+.bio-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ccc; /* Color del texto de la biografía */
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro para el footer */
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative; /* Para asegurar que el footer esté al final */
+}

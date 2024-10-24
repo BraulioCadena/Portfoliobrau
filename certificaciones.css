@@ -1,0 +1,120 @@
+/* Estilo elegante y moderno */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #3498db;
+    color: white;
+}
+
+h1 {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+main {
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.certificaciones-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.certificacion-item {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer; /* Cambia el cursor a mano */
+}
+
+.certificacion-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.certificacion-item:hover img {
+    transform: scale(1.1);
+}
+
+.certificacion-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.certificacion-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+}
+
+.certificacion-item:hover .certificacion-overlay {
+    opacity: 1;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #3498db;
+    color: white;
+    margin-top: 40px;
+}
+
+/* Estilos para la imagen modal */
+.image-modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 9999; /* Encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro */
+    padding: 20px;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}

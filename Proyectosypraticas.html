@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redireccionando...</title>
+    <style>
+        /* Estilos básicos para el cuerpo de la página */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            background-color: #282c34; /* Color de fondo */
+            color: white; /* Color del texto */
+            text-align: center; /* Alinear el texto al centro */
+        }
+    </style>
+    <script>
+        // Redirige automáticamente a index.html después de 2 segundos
+        setTimeout(function() {
+            window.location.href = 'index.html';
+        }, 2000); // 2000 milisegundos = 2 segundos
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Redireccionando...</h1>
+        <p>Serás redirigido a la página de inicio.</p>
+    </div>
+</body>
+</html>
