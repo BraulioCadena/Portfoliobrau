@@ -11,7 +11,7 @@ html, body {
 
 /* Aplica la imagen de fondo al body */
 body {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background-image: url('./Imagenes/imagen1.jpg'); /* Cambia la ruta si es necesario */
     background-size: cover;
     background-position: center;
     color: #fff;
