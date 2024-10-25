@@ -28,12 +28,14 @@
         /* Estilos para el contenedor del PDF */
         .pdf-container {
             margin: 2rem auto; /* Centrado automático */
-            width: 80%;
+            width: 90%; /* Ajusta el ancho para móviles */
+            max-width: 800px; /* Limita el ancho máximo en pantallas grandes */
             height: 80vh; /* Ajusta la altura al 80% de la pantalla visible */
             background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
             border-radius: 10px;
             padding: 1rem;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            overflow: hidden; /* Oculta el desbordamiento */
         }
 
         .pdf-container embed {
@@ -61,6 +63,17 @@
 
         .back-button:hover {
             background-color: #16a085;
+        }
+
+        /* Estilos adicionales para mejorar la visualización en móviles */
+        @media (max-width: 600px) {
+            .pdf-container {
+                height: 70vh; /* Ajusta la altura en móviles */
+            }
+
+            .back-button {
+                font-size: 0.9rem; /* Tamaño de fuente más pequeño para móviles */
+            }
         }
     </style>
 </head>
