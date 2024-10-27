@@ -6,7 +6,7 @@ html, body {
     width: 100%;
     font-family: 'Arial', sans-serif;
     color: #fff;
-    overflow: hidden;
+    overflow-x: hidden; /* Oculta desplazamiento horizontal */
 }
 
 /* Aplica la imagen de fondo al body */
@@ -91,27 +91,34 @@ nav ul li ul.submenu li a:hover {
 
 /* Contenido principal */
 main {
-    padding: 4rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    padding: 4rem 2rem;
     background-color: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(5px);
 }
 
 #intro {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    position: relative;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
 }
 
 .content {
+    max-width: 80%;
+    padding: 2rem;
     color: #fff;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
     animation: fadeIn 1s ease-in-out;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
 }
 
 @keyframes fadeIn {
@@ -122,25 +129,28 @@ main {
 .content h2 {
     font-size: 3rem;
     color: #1abc9c;
+    margin-bottom: 1rem;
 }
 
 .content p {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 1rem;
     border-radius: 10px;
+    margin-bottom: 2rem;
 }
 
 .btn-flotante {
     background-color: #1abc9c;
     border: none;
-    padding: 1rem 2rem;
+    padding: 1rem 2.5rem;
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
     border-radius: 50px;
-    margin-top: 2rem;
+    margin-top: 1rem;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform 0.3s, background-color 0.3s;
 }
 
 .btn-flotante:hover {
@@ -154,6 +164,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 2rem;
+    font-size: 1rem;
 }
 
 /* Responsive */
@@ -165,5 +176,18 @@ footer {
 
     header h1 {
         font-size: 2.5rem;
+    }
+
+    .content h2 {
+        font-size: 2.5rem;
+    }
+
+    .content p {
+        font-size: 1.2rem;
+    }
+
+    .btn-flotante {
+        font-size: 1.2rem;
+        padding: 0.8rem 2rem;
     }
 }
