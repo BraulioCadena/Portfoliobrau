@@ -1,57 +1,193 @@
-/* Tamaño completo para html y body */
+/* Asegura que el body y el html ocupen todo el espacio de la pantalla */
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
-    overflow: hidden;
     font-family: 'Arial', sans-serif;
     color: #fff;
+    overflow-x: hidden; /* Oculta desplazamiento horizontal */
 }
 
-/* Imagen de fondo */
+/* Aplica la imagen de fondo al body */
 body {
-    background-image: url('ruta/a/tu/imagen.jpg'); /* Cambia 'ruta/a/tu/imagen.jpg' por la ruta de tu imagen */
+    background-image: url('./Imagenes/imagen1.jpg'); /* Cambia la ruta si es necesario */
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    color: #fff;
+    cursor: url('./Imagenes/nave.png'), auto;
 }
 
-/* Efecto de cursor destellante */
-body, button, a {
-    cursor: url('ruta/a/tu/imagen_cursor.png'), auto; /* Ajusta a la ruta de tu imagen de cursor, si tienes una */
+/* Estilo del header */
+header {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s;
+}
+
+header:hover h1 {
+    transform: scale(1.1);
+}
+
+/* Navegación */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav ul li {
     position: relative;
 }
 
-body::after {
-    content: "";
+nav ul li a {
+    color: #c1ae19;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+    color: #1abc9c;
+    transform: scale(1.1);
+}
+
+nav ul li ul.submenu {
+    display: none;
     position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: width 0.2s ease, height 0.2s ease, opacity 0.4s ease;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
 }
 
-body:hover::after {
-    width: 20px;
-    height: 20px;
-    opacity: 0;
-    animation: cursorTrail 0.6s infinite;
+nav ul li:hover ul.submenu {
+    display: block;
 }
 
-/* Animación del destello */
-@keyframes cursorTrail {
-    0% {
-        width: 10px;
-        height: 10px;
-        opacity: 1;
+nav ul li ul.submenu li a {
+    color: #fff;
+    padding: 0.5rem 1rem;
+}
+
+nav ul li ul.submenu li a:hover {
+    background-color: #1abc9c;
+}
+
+/* Contenido principal */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+#intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+.content {
+    max-width: 80%;
+    padding: 2rem;
+    color: #fff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 1s ease-in-out;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.content h2 {
+    font-size: 3rem;
+    color: #1abc9c;
+    margin-bottom: 1rem;
+}
+
+.content p {
+    font-size: 1.3rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.btn-flotante {
+    background-color: #1abc9c;
+    border: none;
+    padding: 1rem 2.5rem;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 50px;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn-flotante:hover {
+    transform: scale(1.1);
+    background-color: #16a085;
+}
+
+/* Pie de página */
+footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+    font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
     }
-    100% {
-        width: 30px;
-        height: 30px;
-        opacity: 0;
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .content h2 {
+        font-size: 2.5rem;
+    }
+
+    .content p {
+        font-size: 1.2rem;
+    }
+
+    .btn-flotante {
+        font-size: 1.2rem;
+        padding: 0.8rem 2rem;
     }
 }
