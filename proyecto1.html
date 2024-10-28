@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualizar PDF</title>
     <style>
-        /* Reiniciar estilo para pantalla completa */
+        /* Configuración básica para ocupar pantalla completa */
         html, body {
             margin: 0;
             padding: 0;
@@ -16,35 +16,39 @@
             background-color: #000;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            align-items: center;
             overflow: hidden;
         }
 
-        /* Contenedor PDF de pantalla completa */
+        /* Contenedor del PDF con tamaño ajustable */
         .pdf-container {
-            flex: 1;
-            width: 100%;
-            height: calc(100vh - 60px); /* Deja espacio para el botón */
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            width: 90%;
+            max-width: 800px;
+            height: 70vh; /* Altura ajustada para móviles */
+            margin: 1rem 0;
             background-color: #000;
+            border-radius: 12px;
+            box-shadow: 0px 0px 15px rgba(0, 128, 128, 0.7); /* Sombra */
         }
 
-        /* Estilo de iframe para PDF */
+        /* Estilos de iFrame para PDF */
         .pdf-container iframe {
-            width: 90%;
-            height: 90%;
+            width: 100%;
+            height: 100%;
             border: none;
-            box-shadow: 0px 0px 15px rgba(0, 128, 128, 0.7); /* Sombra innovadora */
             border-radius: 12px;
         }
 
-        /* Botón de regreso flotante e innovador */
-        .back-button {
-            position: relative;
-            margin: 1rem auto;
-            width: auto;
+        /* Estilo de los botones */
+        .button-container {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .button {
             padding: 0.8rem 1.5rem;
             background: linear-gradient(135deg, #1abc9c, #16a085);
             color: #fff;
@@ -53,25 +57,40 @@
             border-radius: 30px;
             text-decoration: none;
             text-align: center;
-            box-shadow: 0px 4px 15px rgba(0, 128, 128, 0.5); /* Sombra para un efecto flotante */
+            box-shadow: 0px 4px 15px rgba(0, 128, 128, 0.5); /* Sombra */
             transition: all 0.3s ease;
-            display: block;
+            display: inline-block;
         }
 
-        .back-button:hover {
+        .button:hover {
             background: linear-gradient(135deg, #16a085, #1abc9c);
-            transform: translateY(-3px); /* Efecto de elevación */
+            transform: translateY(-3px); /* Efecto flotante */
             box-shadow: 0px 6px 20px rgba(0, 128, 128, 0.7);
+        }
+
+        /* Estilos adicionales para pantallas móviles */
+        @media (max-width: 600px) {
+            .pdf-container {
+                height: 50vh; /* Reduce altura para asegurar espacio en móviles */
+            }
+
+            .button {
+                font-size: 0.9rem;
+                padding: 0.7rem 1.2rem; /* Tamaño de botón más pequeño */
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Contenedor del PDF -->
     <main class="pdf-container">
-        <!-- iFrame del PDF a pantalla completa -->
         <iframe src="./proyects/TesisFinal11.pdf" type="application/pdf"></iframe>
     </main>
 
-    <!-- Botón de regreso al inicio en la parte inferior -->
-    <a href="index.html" class="back-button">Regresar a Inicio</a>
+    <!-- Botones para acciones -->
+    <div class="button-container">
+        <a href="index.html" class="button">Regresar a Inicio</a>
+        <a href="./proyects/TesisFinal11.pdf" target="_blank" class="button">Abrir en Nueva Ventana</a>
+    </div>
 </body>
 </html>
