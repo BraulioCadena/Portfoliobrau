@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualizar PDF</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Enlace a tu archivo CSS -->
     <style>
-        /* Asegura que el body ocupe toda la pantalla */
+        /* Configuración básica */
         html, body {
             margin: 0;
             padding: 0;
@@ -14,53 +13,97 @@
             width: 100%;
             font-family: 'Arial', sans-serif;
             color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
         }
 
-        /* Aplica el fondo de imagen como en los otros estilos */
+        /* Fondo de imagen */
         body {
-            background-image: url('./Imagenes/imagen1.jpg'); /* Ruta de la imagen de fondo */
+            background-image: url('./Imagenes/imagen1.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             background-repeat: no-repeat;
         }
 
-        /* Estilos para el contenedor del PDF */
-        .pdf-container {
-            margin: 2rem auto; /* Centrado automático */
-            width: 80%;
-            height: 80vh; /* Ajusta la altura al 80% de la pantalla visible */
-            background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
-            border-radius: 10px;
+        /* Encabezado */
+        header {
+            text-align: center;
             padding: 1rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.7);
+            width: 100%;
+            box-shadow: 0px 2px 10px rgba(0, 128, 128, 0.5);
         }
 
+        header h1 {
+            font-size: 1.5rem;
+            color: #13c9ea;
+        }
+
+        /* Contenedor del PDF */
+        .pdf-container {
+            width: 90%;
+            max-width: 800px;
+            height: 60vh;
+            margin: 1rem 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 12px;
+            box-shadow: 0px 0px 15px rgba(0, 128, 128, 0.7);
+        }
+
+        /* PDF embebido */
         .pdf-container embed {
             width: 100%;
             height: 100%;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
         }
 
-        /* Estilos para el botón de regresar */
-        .back-button {
-            display: inline-block; /* Permite centrar el botón */
-            margin: 1rem auto; /* Espacio superior y centrado horizontal */
-            padding: 0.5rem 1rem; /* Tamaño del botón */
-            background-color: #1abc9c;
+        /* Contenedor de botones */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        /* Estilo de botones */
+        .button {
+            padding: 0.6rem 1.2rem;
+            background: linear-gradient(135deg, #1abc9c, #16a085);
             color: #fff;
+            font-size: 1rem;
             border: none;
-            border-radius: 5px;
+            border-radius: 30px;
             text-decoration: none;
-            font-size: 1rem; /* Tamaño de fuente */
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            text-align: center; /* Centra el texto dentro del botón */
+            text-align: center;
+            box-shadow: 0px 4px 15px rgba(0, 128, 128, 0.5);
+            transition: all 0.3s ease;
         }
 
-        .back-button:hover {
-            background-color: #16a085;
+        .button:hover {
+            background: linear-gradient(135deg, #16a085, #1abc9c);
+            transform: translateY(-3px);
+            box-shadow: 0px 6px 20px rgba(0, 128, 128, 0.7);
+        }
+
+        /* Ajustes para móviles */
+        @media (max-width: 600px) {
+            .pdf-container {
+                height: 50vh;
+            }
+
+            header h1 {
+                font-size: 1.2rem;
+            }
+
+            .button {
+                font-size: 0.9rem;
+                padding: 0.5rem 1rem;
+            }
         }
     </style>
 </head>
@@ -70,9 +113,12 @@
     </header>
 
     <main>
-        <a href="index.html" class="back-button">Regresar a Inicio</a> <!-- Botón de regresar a inicio -->
+        <div class="button-container">
+            <a href="./proyects/Proyecto 3.pdf" target="_blank" class="button">Abrir en Nueva Ventana</a>
+            <a href="index.html" class="button">Regresar a Inicio</a>
+        </div>
         <div class="pdf-container">
-            <embed src=".\proyects\Proyecto 3.pdf" type="application/pdf">
+            <embed src="./proyects/Proyecto 3.pdf" type="application/pdf">
         </div>
     </main>
 
