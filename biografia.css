@@ -19,11 +19,13 @@ header {
     align-items: center;
     padding: 2rem;
     background-color: transparent; /* Hacer que el fondo sea transparente */
+    flex-wrap: wrap; /* Permitir que los elementos se ajusten */
 }
 
 .photo-container {
     flex: 1; /* Ajusta el espacio según el tamaño de la imagen */
     text-align: center; /* Centra la imagen */
+    min-width: 200px; /* Ancho mínimo para la imagen */
 }
 
 .bio-photo {
@@ -47,6 +49,32 @@ header {
     font-size: 1.2rem;
     line-height: 1.6;
     color: #ccc; /* Color del texto de la biografía */
+}
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+    .biography-section {
+        flex-direction: column; /* Cambiar a columna en móviles */
+        align-items: center; /* Centrar elementos en columna */
+    }
+
+    .photo-container {
+        padding-bottom: 1rem; /* Espacio en la parte inferior */
+        min-width: auto; /* Remover ancho mínimo para adaptarse mejor */
+    }
+
+    .bio-content {
+        padding-left: 0; /* Remover margen izquierdo en móviles */
+        text-align: center; /* Centrar texto en móviles */
+    }
+
+    .bio-content h2 {
+        font-size: 1.8rem; /* Ajustar tamaño del título en móviles */
+    }
+
+    .bio-content p {
+        font-size: 1rem; /* Ajustar tamaño del texto en móviles */
+    }
 }
 
 footer {
