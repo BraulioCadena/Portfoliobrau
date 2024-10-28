@@ -1,21 +1,18 @@
-// Función para crear un efecto flotante en la página
+// Smooth scroll to "Sobre Mí" section
+function scrollToAbout() {
+    const aboutSection = document.querySelector('#about');
+    if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+// Hover effect for button (example)
 document.addEventListener('DOMContentLoaded', () => {
-    const btnFlotante = document.querySelector('.btn-flotante');
-
-    btnFlotante.addEventListener('click', () => {
-        alert("¡Gracias por explorar más sobre mí!");
+    const button = document.querySelector('.btn-flotante');
+    button.addEventListener('mouseover', () => {
+        button.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3)';
     });
-
-    // Efecto de entrada para los elementos del contenido
-    const content = document.querySelector('.content');
-    content.style.opacity = 0;
-    content.style.transform = 'translateY(50px)';
-
-    window.addEventListener('scroll', () => {
-        const scrollPos = window.scrollY;
-        if (scrollPos > 100) {
-            content.style.opacity = 1;
-            content.style.transform = 'translateY(0)';
-        }
+    button.addEventListener('mouseout', () => {
+        button.style.boxShadow = 'none';
     });
 });
