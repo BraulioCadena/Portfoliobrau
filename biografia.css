@@ -23,106 +23,114 @@ header {
 }
 
 .photo-container {
-    flex: 1; /* Ajusta el espacio según el tamaño de la imagen */
-    text-align: center; /* Centra la imagen */
-    min-width: 200px; /* Ancho mínimo para la imagen */
+    flex: 1;
+    text-align: center;
+    min-width: 200px;
 }
 
 .bio-photo {
     max-width: 100%;
-    height: auto; /* Ajusta la altura automáticamente */
-    border-radius: 0; /* Eliminar bordes redondeados para un cuadrado */
+    height: auto;
+    border-radius: 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para efecto 3D */
 }
 
 .bio-content {
-    flex: 2; /* Da más espacio al contenido de la biografía */
-    padding-left: 2rem; /* Espacio a la izquierda para separación */
+    flex: 2;
+    padding-left: 2rem;
 }
 
 .bio-content h2 {
     font-size: 2rem;
-    color: #13c9ea; /* Título en color azul */
+    color: #13c9ea;
 }
 
 .bio-content p {
     font-size: 1.2rem;
     line-height: 1.6;
-    color: #ccc; /* Color del texto de la biografía */
+    color: #ccc;
 }
 
 /* Estilos para la sección de Habilidades y Propósitos */
 .skills-goals-section {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Cambia a columna en pantallas grandes */
     padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+    background-color: rgba(255, 255, 255, 0.05); /* Fondo translúcido */
     border-radius: 12px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
     margin: 2rem 0;
 }
 
 .skills, .goals {
-    flex: 1;
+    margin: 1rem 0;
     padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.05); /* Fondo ligeramente distinto */
+    border-radius: 8px;
 }
 
 .skills h2, .goals h2 {
     font-size: 1.8rem;
-    color: #13c9ea; /* Color de los títulos */
+    color: #13c9ea;
     margin-bottom: 1rem;
+    border-bottom: 1px solid #13c9ea;
+    padding-bottom: 0.5rem;
 }
 
 .skills ul {
     list-style-type: disc;
     padding-left: 20px;
+    margin-top: 0;
 }
 
 .skills li, .goals p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.6;
-    color: #ccc; /* Color de los textos */
+    color: #ccc;
+    margin-bottom: 0.5rem;
 }
 
 /* Estilos para móviles */
 @media (max-width: 768px) {
     .biography-section {
-        flex-direction: column; /* Cambiar a columna en móviles */
-        align-items: center; /* Centrar elementos en columna */
+        flex-direction: column;
+        align-items: center;
     }
 
     .photo-container {
-        padding-bottom: 1rem; /* Espacio en la parte inferior */
-        min-width: auto; /* Remover ancho mínimo para adaptarse mejor */
+        padding-bottom: 1rem;
+        min-width: auto;
     }
 
     .bio-content {
-        padding-left: 0; /* Remover margen izquierdo en móviles */
-        text-align: center; /* Centrar texto en móviles */
+        padding-left: 0;
+        text-align: center;
     }
 
     .bio-content h2 {
-        font-size: 1.8rem; /* Ajustar tamaño del título en móviles */
+        font-size: 1.8rem;
     }
 
     .bio-content p {
-        font-size: 1rem; /* Ajustar tamaño del texto en móviles */
+        font-size: 1rem;
     }
 
     .skills-goals-section {
-        flex-direction: column; /* Cambiar a columna en móviles */
+        flex-direction: column;
+        padding: 1rem;
     }
 
     .skills, .goals {
-        padding: 0;
+        margin: 0.5rem 0;
+        padding: 1rem;
         text-align: center;
     }
 }
 
 footer {
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro para el footer */
+    background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
     text-align: center;
     padding: 1rem 0;
-    position: relative; /* Para asegurar que el footer esté al final */
+    position: relative;
 }
