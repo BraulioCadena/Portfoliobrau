@@ -51,6 +51,39 @@ header {
     color: #ccc; /* Color del texto de la biografía */
 }
 
+/* Estilos para la sección de Habilidades y Propósitos */
+.skills-goals-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+    border-radius: 12px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+    margin: 2rem 0;
+}
+
+.skills, .goals {
+    flex: 1;
+    padding: 1rem;
+}
+
+.skills h2, .goals h2 {
+    font-size: 1.8rem;
+    color: #13c9ea; /* Color de los títulos */
+    margin-bottom: 1rem;
+}
+
+.skills ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.skills li, .goals p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ccc; /* Color de los textos */
+}
+
 /* Estilos para móviles */
 @media (max-width: 768px) {
     .biography-section {
@@ -74,6 +107,15 @@ header {
 
     .bio-content p {
         font-size: 1rem; /* Ajustar tamaño del texto en móviles */
+    }
+
+    .skills-goals-section {
+        flex-direction: column; /* Cambiar a columna en móviles */
+    }
+
+    .skills, .goals {
+        padding: 0;
+        text-align: center;
     }
 }
 
