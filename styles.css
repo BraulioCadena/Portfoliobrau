@@ -14,34 +14,33 @@ body {
 
 /* Encabezado */
 header {
-    height: auto; /* Cambiar a altura automática para móviles */
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem; /* Agregar padding para espacio en móviles */
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     color: #FFF;
     text-align: center;
 }
 
 header h1 {
-    font-size: 2.5rem; /* Reducir tamaño de fuente para móviles */
-    letter-spacing: 1px; /* Reducir espaciado de letras */
+    font-size: 3.5rem;
+    letter-spacing: 3px;
     color: #00c6ff;
-    margin-bottom: 1rem; /* Ajustar margen */
+    margin-bottom: 2rem;
 }
 
+/* Estilos de navegación */
 nav ul {
     list-style: none;
     display: flex;
-    flex-direction: column; /* Cambiar a columna en móviles */
+    gap: 2rem;
     padding: 1rem;
 }
 
 nav ul li {
     position: relative;
-    margin-bottom: 1rem; /* Añadir espacio entre elementos */
 }
 
 nav ul li a {
@@ -49,7 +48,22 @@ nav ul li a {
     color: #ffffff;
     font-size: 1.2rem;
     position: relative;
-    padding: 0.5rem; /* Añadir padding */
+    padding-bottom: 0.2rem;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #00c6ff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 /* Estilos de Submenú */
@@ -63,7 +77,6 @@ nav ul li a {
     border-radius: 5px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     list-style: none;
-    z-index: 1000; /* Asegurar que esté por encima de otros elementos */
 }
 
 .submenu li {
@@ -80,8 +93,7 @@ nav ul li a {
     color: #00c6ff;
 }
 
-/* Mostrar submenú en click */
-nav ul li:focus-within .submenu,
+/* Mostrar submenú en hover */
 nav ul li:hover .submenu {
     display: block;
 }
@@ -89,20 +101,20 @@ nav ul li:hover .submenu {
 /* Sección de Introducción */
 #intro {
     text-align: center;
-    padding: 2rem; /* Ajustar padding para móviles */
+    padding: 5rem 2rem;
     background: rgba(0, 0, 0, 0.5);
     color: #e0e0e0;
 }
 
 #intro .content h2 {
-    font-size: 2rem; /* Ajustar tamaño de fuente */
+    font-size: 2.5rem;
     color: #00c6ff;
     margin-bottom: 1rem;
 }
 
 #intro .content p {
-    font-size: 1rem; /* Reducir tamaño de fuente */
-    max-width: 90%; /* Hacer más ancho en móviles */
+    font-size: 1.2rem;
+    max-width: 700px;
     margin: 0 auto;
     color: #b0bec5;
 }
@@ -132,31 +144,33 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Media queries para pantallas más pequeñas */
+/* Media Queries para dispositivos móviles */
 @media (max-width: 600px) {
     nav ul {
-        flex-direction: column; /* Cambiar a columna en móviles */
-        align-items: center; /* Centrar items */
+        flex-direction: column; /* Cambia la dirección a columna */
+        gap: 1rem; /* Espacio entre elementos */
+        align-items: center; /* Centrar elementos */
+    }
+
+    nav ul li {
+        width: 100%; /* Opcional: ancho completo para cada elemento */
+        text-align: center; /* Centra el texto */
     }
 
     header h1 {
-        font-size: 2rem; /* Ajustar tamaño del encabezado */
-    }
-
-    nav ul li a {
-        font-size: 1.1rem; /* Ajustar tamaño del texto de los enlaces */
+        font-size: 2.5rem; /* Ajusta el tamaño del texto en móviles */
     }
 
     #intro .content h2 {
-        font-size: 1.8rem; /* Ajustar tamaño de título en sección de introducción */
+        font-size: 2rem; /* Ajusta el tamaño del texto en móviles */
     }
 
     #intro .content p {
-        font-size: 0.9rem; /* Ajustar tamaño del texto en sección de introducción */
+        font-size: 1rem; /* Ajusta el tamaño del texto en móviles */
     }
 
     .btn-explorar {
-        font-size: 1rem; /* Ajustar tamaño del botón */
-        padding: 0.5rem 1.5rem; /* Ajustar padding del botón */
+        font-size: 1rem; /* Ajusta el tamaño del botón en móviles */
+        padding: 0.6rem 1.5rem; /* Ajusta el padding en móviles */
     }
 }
