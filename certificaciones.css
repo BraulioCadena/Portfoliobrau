@@ -37,6 +37,7 @@ main {
     gap: 20px;
 }
 
+/* Estilo para elementos de certificación */
 .certificacion-item {
     position: relative;
     width: 300px;
@@ -45,6 +46,7 @@ main {
     border-radius: 15px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer; /* Cambia el cursor a mano */
+    transition: transform 0.3s ease; /* Transición suave */
 }
 
 .certificacion-item img {
@@ -100,6 +102,9 @@ footer {
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro */
     padding: 20px;
+    justify-content: center; /* Centrar contenido */
+    align-items: center; /* Centrar verticalmente */
+    display: flex; /* Flex para centrar la imagen */
 }
 
 .modal-content {
@@ -117,4 +122,21 @@ footer {
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem; /* Ajustar el tamaño del título en móviles */
+    }
+
+    main {
+        padding: 15px; /* Menos espacio en dispositivos móviles */
+    }
+
+    .certificacion-item {
+        width: 100%; /* Ocupa todo el ancho en móviles */
+        height: auto; /* Altura automática para mantener la proporción */
+        max-width: 300px; /* Limitar el ancho máximo */
+    }
 }

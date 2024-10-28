@@ -10,7 +10,7 @@ const certificacionImages = document.querySelectorAll(".certificacion-image");
 // Agregar evento de clic a cada imagen
 certificacionImages.forEach((img) => {
     img.onclick = function() {
-        modal.style.display = "block"; // Mostrar modal
+        modal.style.display = "flex"; // Mostrar modal
         modalImage.src = this.src; // Establecer la imagen del modal
         captionText.innerHTML = this.nextElementSibling.innerText; // Mostrar la descripción
     }
@@ -23,7 +23,7 @@ closeModal.onclick = function() {
 
 // Cerrar modal al hacer clic en cualquier parte de la ventana
 window.onclick = function(event) {
-    if (event.target === modal) {
+    if (event.target === modal || event.target === modalImage) {
         modal.style.display = "none"; // Ocultar modal
     }
 }
