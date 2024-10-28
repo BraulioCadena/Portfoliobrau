@@ -16,23 +16,8 @@ body {
     background-position: center;
     color: #fff;
     cursor: url('./Imagenes/nave.png'), auto;
-    position: relative; /* Necesario para ::before */
 }
 
-/* Capa superpuesta */
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('./Imagenes/imagen2.jpg'); /* Ruta de la imagen secundaria */
-    background-size: cover;
-    background-position: center;
-    opacity: 0.5; /* Ajusta la opacidad para el efecto semitransparente */
-    z-index: -1;
-}
 /* Estilo del header */
 header {
     background: rgba(0, 0, 0, 0.5);
@@ -126,6 +111,7 @@ main {
     color: #fff;
 }
 
+/* Contenido */
 .content {
     max-width: 80%;
     padding: 2rem;
