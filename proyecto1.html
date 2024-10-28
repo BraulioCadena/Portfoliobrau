@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualizar PDF</title>
     <style>
-        /* Configuración básica para ocupar pantalla completa */
+        /* Configuración básica */
         html, body {
             margin: 0;
             padding: 0;
@@ -17,21 +17,21 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
-        /* Contenedor del PDF con tamaño ajustable */
+        /* Contenedor principal de PDF */
         .pdf-container {
             width: 90%;
             max-width: 800px;
-            height: 70vh; /* Altura ajustada para móviles */
+            height: 60vh; /* Altura más baja para asegurar espacio */
             margin: 1rem 0;
             background-color: #000;
             border-radius: 12px;
-            box-shadow: 0px 0px 15px rgba(0, 128, 128, 0.7); /* Sombra */
+            box-shadow: 0px 0px 15px rgba(0, 128, 128, 0.7);
         }
 
-        /* Estilos de iFrame para PDF */
+        /* iFrame para el PDF */
         .pdf-container iframe {
             width: 100%;
             height: 100%;
@@ -39,17 +39,17 @@
             border-radius: 12px;
         }
 
-        /* Estilo de los botones */
+        /* Estilo de botones */
         .button-container {
             display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-direction: column;
+            gap: 0.8rem;
+            align-items: center;
             margin-bottom: 1rem;
         }
 
         .button {
-            padding: 0.8rem 1.5rem;
+            padding: 0.6rem 1.2rem;
             background: linear-gradient(135deg, #1abc9c, #16a085);
             color: #fff;
             font-size: 1rem;
@@ -57,37 +57,36 @@
             border-radius: 30px;
             text-decoration: none;
             text-align: center;
-            box-shadow: 0px 4px 15px rgba(0, 128, 128, 0.5); /* Sombra */
+            box-shadow: 0px 4px 15px rgba(0, 128, 128, 0.5);
             transition: all 0.3s ease;
-            display: inline-block;
         }
 
         .button:hover {
             background: linear-gradient(135deg, #16a085, #1abc9c);
-            transform: translateY(-3px); /* Efecto flotante */
+            transform: translateY(-3px);
             box-shadow: 0px 6px 20px rgba(0, 128, 128, 0.7);
         }
 
-        /* Estilos adicionales para pantallas móviles */
+        /* Ajustes para móviles */
         @media (max-width: 600px) {
             .pdf-container {
-                height: 50vh; /* Reduce altura para asegurar espacio en móviles */
+                height: 50vh;
             }
 
             .button {
                 font-size: 0.9rem;
-                padding: 0.7rem 1.2rem; /* Tamaño de botón más pequeño */
+                padding: 0.5rem 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Contenedor del PDF -->
+    <!-- Contenedor de PDF -->
     <main class="pdf-container">
         <iframe src="./proyects/TesisFinal11.pdf" type="application/pdf"></iframe>
     </main>
 
-    <!-- Botones para acciones -->
+    <!-- Botones debajo del PDF -->
     <div class="button-container">
         <a href="index.html" class="button">Regresar a Inicio</a>
         <a href="./proyects/TesisFinal11.pdf" target="_blank" class="button">Abrir en Nueva Ventana</a>
