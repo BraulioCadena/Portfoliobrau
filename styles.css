@@ -1,130 +1,107 @@
-/* Estilo general */
+/* Estilos globales */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 body {
-    background-image: url('./Imagenes/imagen1.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    color: #FFFFFF;
+    background: linear-gradient(135deg, #232526, #414345);
+    color: #FFF;
     overflow-x: hidden;
 }
 
+/* Encabezado */
 header {
-    position: relative;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #FFF;
     text-align: center;
-    color: #FFFFFF;
-}
-
-header .overlay {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 2rem;
-    width: 100%;
 }
 
 header h1 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    color: #1abc9c;
-    opacity: 0;
-    animation: fadeIn 2s forwards;
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+    color: #00c6ff;
+    margin-bottom: 2rem;
 }
 
 nav ul {
-    display: flex;
-    justify-content: center;
     list-style: none;
-    gap: 1rem;
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
 }
 
 nav ul li a {
-    color: #ffffff;
     text-decoration: none;
+    color: #ffffff;
     font-size: 1.2rem;
-    padding: 0.5rem 1rem;
-    border: 1px solid transparent;
-    transition: color 0.3s, border 0.3s;
+    position: relative;
+    padding-bottom: 0.2rem;
 }
 
-nav ul li a:hover {
-    border: 1px solid #1abc9c;
-    color: #1abc9c;
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #00c6ff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 #intro {
-    background: rgba(0, 0, 0, 0.75);
-    padding: 4rem;
     text-align: center;
+    padding: 5rem 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: #e0e0e0;
 }
 
-.content h2 {
-    font-size: 3rem;
-    color: #1abc9c;
-    margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+#intro .content h2 {
+    font-size: 2.5rem;
+    color: #00c6ff;
+    margin-bottom: 1rem;
 }
 
-.content p {
-    font-size: 1.5rem;
-    color: #ffffff;
-    margin-bottom: 2rem;
-    line-height: 1.6;
+#intro .content p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #b0bec5;
 }
 
-.btn-futuristic {
-    font-size: 1.3rem;
+.btn-explorar {
+    margin-top: 2rem;
     padding: 0.8rem 2rem;
-    color: #fff;
-    background: #1abc9c;
+    font-size: 1.2rem;
+    color: #FFF;
+    background: #00c6ff;
     border: none;
-    border-radius: 30px;
+    border-radius: 50px;
     cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
+    transition: background 0.3s;
 }
 
-.btn-futuristic:hover {
-    background: #16a085;
-    transform: scale(1.1);
+.btn-explorar:hover {
+    background: #02a0c0;
 }
 
+/* Pie de página */
 footer {
-    background: #000000;
-    color: #888888;
-    padding: 1.5rem;
+    background: #121212;
+    color: #b0bec5;
     text-align: center;
-    font-size: 1rem;
-}
-
-/* Animaciones */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-/* Adaptación para dispositivos móviles */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2.5rem;
-    }
-
-    .content h2 {
-        font-size: 2rem;
-    }
-
-    .content p {
-        font-size: 1rem;
-    }
+    padding: 1.5rem;
+    font-size: 0.9rem;
 }
